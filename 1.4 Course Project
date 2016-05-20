@@ -1,0 +1,8 @@
+##Process to create remote repo then push back
+
+* Clone repo from github to desktop
+* Add or make amends to files
+* git add -A (to add new files)
+* git commit "message"
+* git push
+
