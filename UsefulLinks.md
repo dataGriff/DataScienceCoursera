@@ -4,3 +4,5 @@
 * https://help.github.com/articles/fork-a-repo/
 * http://simplystatistics.org/
 * http://www.jhsph.edu/departments/biostatistics/
+* https://www.r-project.org/doc/bib/R-books.html
+* https://www.bioconductor.org/
