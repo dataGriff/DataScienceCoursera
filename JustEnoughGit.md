@@ -1,8 +1,8 @@
 ##Just Enough GIT
 
-* git int
-* git add .
-* git commit -m "My Message"
-* git remote add origin "http://github.com/foo"
-* git push origin master
-* git pull
+1 git int
+1 git add .
+1 git commit -m "My Message"
+1 git remote add origin "http://github.com/foo"
+1 git push origin master
+1 git pull
