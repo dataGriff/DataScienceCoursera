@@ -1,0 +1,114 @@
+##Programming with R
+
+#Control Structures
+* Used for programming mainly
+* if, else
+* for
+* while
+* repeat
+* break
+* next 
+* return
+
+#Control Structures - if, else
+* if() 
+  {#do something}
+  else
+  {#do something else}
+* Example different way of writing
+* Sets y
+y <- if(x>3)
+    { 10 }
+    else {3}
+    
+#Control Structures - for
+* for(i in 1:10)
+    {print (i)}
+*The following all equivalent for x    
+* x <- c("a", "b","c","d")
+* for(i in 1:4)
+  { print(x[i])}
+* for(i in seq_along(x))
+  { print(x[i])}
+* for(letter in x)
+  { print(letter)}
+* You can nest for loops
+* e.g. loop over rows then columns
+* x <- matrix (1:6, 2, 3)
+for(i in seq_len(nrow(x)))
+{
+  for(j in seq_len(ncol(x)))
+    {
+    print(x[i,j]
+    }
+}
+* Don't nest too much as gets messy, use functions
+
+#Control Structures - while
+* count <- 0
+while(count <10)
+{
+  print(count)
+  count <- count+1
+}
+* You can test multiple conditions with && in control structures
+* while(z>=3 && z <=10)
+* Evaluates from left to right
+
+
+#Control Structures = Repeat, Next, Break
+* repeat a bit dangerous and could use for loop
+* repeat starts an infinite loop until call break
+* can use if within repeat to cause a break to get out of repeat loop
+* repeat{#do something if(something) break}
+* next can be used in any loop and used to skip an iteration
+for(i in 1:100)
+{
+  if(i<=20)
+  {
+    ##skip first 20 iterations
+    next
+  }
+  ##do something here
+}
+* return can also interrupt to and brings a value
+
+#Your first R Function
+* see in functions folder
+
+#Functions Part 1
+* f <- function(<args>) {#do}
+* function is object, can pass to other functions,can nest
+* arguments can be missing or default
+* formals(f) #returns formal arguments of function
+* args(f) #returns arguments of function
+* Arguments can be match position or by name
+* Arguments can be partially matched
+* f(value1, value2)
+* f(arg1 = value1, arg2 = value2)
+* sd(vector) #standard deviation
+* sd(airquality$Temp, na.rm = TRUE)
+* lm(matrix) #linear model
+* lm(airquality) #linear model
+
+#Functions part 2
+* NULL can be a default argument
+* Lazy evaluation = only evaluated as needed
+* "..." inherits arguments from other function
+* e.g. for myplot using plot and inherit "..." so no need write all arguments
+myplot <- function(x,y,type="l",...){
+  plot(x,y,type=type,...
+}
+* Generic functions ... so can use methods
+* ... also when dont know arguments in advance
+* args(paste) #example has ... as first argument
+* Basically dynamic arguments
+* arguments after "..." must be named explicitly to work
+* paste() #pastes together dynamic items
+* paste("a","b", sep=":") #example
+
+
+
+
+
+
