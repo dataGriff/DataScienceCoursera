@@ -119,7 +119,20 @@ myplot <- function(x,y,type="l",...){
 * function + environment = function closure
 * Lexical scoping = searches through environments then parent environment etc, if not found (empty environment) then error
 
-
+#Scoping Rules Continued
+* Functions can have functions defined with them
+* Constructor function - function makies a function
+* Functions can return another function as its value
+* ls(environment(function)) #returns what is in function environment
+* functions can be free variables within other functions
+* Lexical scoping looks up in environment where function defined
+* Dynamic scoping - looked up in environment from where called
+* When defined and called in same environment, lexical scoping can look like dynamic scoping
+* Lexical scoping in other lang - Scheme, Perl, Python, Common Lisp
+* Consequence of Lexical scoping (R):
+* all objects stored in memory
+* all functions must contain pointers to their environment
+* 
 
 
 
