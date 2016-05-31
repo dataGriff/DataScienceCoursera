@@ -107,6 +107,19 @@ myplot <- function(x,y,type="l",...){
 * paste() #pastes together dynamic items
 * paste("a","b", sep=":") #example
 
+# Scoping Rules - Symbol Binding
+* R tries to bind value to a symbol
+* Searches through environments as dictated by search() function and binds when finds
+* Does ".GlobalEnv" first then goes through package namespaces (as shown by search()), base package is always last
+* Global environment is user namespace
+* as seperate namespaces - can have an object named c and a function named c
+* R uses lexical scoping or static scoping. Common alt is dynamic scoping.
+* Those variables that are not in format argument of function but used in function are called free variables
+* Environment is collection of (symbol, value) pairs, every environment has parent, enviro can have many children, empty enviro does not have parent
+* function + environment = function closure
+* Lexical scoping = searches through environments then parent environment etc, if not found (empty environment) then error
+
+
 
 
 
