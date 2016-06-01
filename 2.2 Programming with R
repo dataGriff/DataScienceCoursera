@@ -132,7 +132,20 @@ myplot <- function(x,y,type="l",...){
 * Consequence of Lexical scoping (R):
 * all objects stored in memory
 * all functions must contain pointers to their environment
-* 
+
+#Scoping Rules - Optimisation Example
+* optimisation routines in R - optim, nlm, optimize - all require function who argument is vector of parameters
+* "Constructor" function - create a functionm which takes a param to opimize
+* defining environment held in memory so function knows where parameters come from - defining environment remember!
+* Objective functions can have arguments built in so don't have to have lots of arguments when call every time
+* as the arguments are held in the environment anyway
+
+#Coding Standards for R
+* Use text file / text editor
+* Indent your code (4 spaces minimum, 8 spaces ideal)
+* when using R script in R studio - Code option for preferences?
+* Limit width of your code
+* Limit length of individual functions
 
 
 
