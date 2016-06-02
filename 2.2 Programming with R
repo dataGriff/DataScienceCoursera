@@ -107,7 +107,83 @@ myplot <- function(x,y,type="l",...){
 * paste() #pastes together dynamic items
 * paste("a","b", sep=":") #example
 
+# Scoping Rules - Symbol Binding
+* R tries to bind value to a symbol
+* Searches through environments as dictated by search() function and binds when finds
+* Does ".GlobalEnv" first then goes through package namespaces (as shown by search()), base package is always last
+* Global environment is user namespace
+* as seperate namespaces - can have an object named c and a function named c
+* R uses lexical scoping or static scoping. Common alt is dynamic scoping.
+* Those variables that are not in format argument of function but used in function are called free variables
+* Environment is collection of (symbol, value) pairs, every environment has parent, enviro can have many children, empty enviro does not have parent
+* function + environment = function closure
+* Lexical scoping = searches through environments then parent environment etc, if not found (empty environment) then error
 
+#Scoping Rules Continued
+* Functions can have functions defined with them
+* Constructor function - function makies a function
+* Functions can return another function as its value
+* ls(environment(function)) #returns what is in function environment
+* functions can be free variables within other functions
+* Lexical scoping looks up in environment where function defined
+* Dynamic scoping - looked up in environment from where called
+* When defined and called in same environment, lexical scoping can look like dynamic scoping
+* Lexical scoping in other lang - Scheme, Perl, Python, Common Lisp
+* Consequence of Lexical scoping (R):
+* all objects stored in memory
+* all functions must contain pointers to their environment
+
+#Scoping Rules - Optimisation Example
+* optimisation routines in R - optim, nlm, optimize - all require function who argument is vector of parameters
+* "Constructor" function - create a functionm which takes a param to opimize
+* defining environment held in memory so function knows where parameters come from - defining environment remember!
+* Objective functions can have arguments built in so don't have to have lots of arguments when call every time
+* as the arguments are held in the environment anyway
+
+#Coding Standards for R
+* Use text file / text editor
+* Indent your code (4 spaces minimum, 8 spaces ideal)
+* when using R script in R studio - Code option for preferences?
+* Limit width of your code
+* Limit length of individual functions
+* Logical functions and use traceback, profiler, debugger functions you can find where problem occured - so easier to fix
+
+#Dates and Times in R
+* Date class
+* POSIXct (a big integer) POSIXlt (a list) classes for time
+* 1970-01-01 days or seconds since to calculate date or time in R
+* e.g. run these in R unclass(as.Date("1970-01-01")), unclass(as.Date("1970-01-02"))
+* as.Date("1970-01-01")
+* Generic functions - weekdays(), months(), quarters()
+* e.g. months(as.Date("1983-08-21"))
+* Sys.time() #current time
+* as.POSIXlt() #converts to this class
+* p<- as.POSIXlt(Sys.time())
+* names(unclass(p))
+* p <- as.POSIXlt(Sys.time()); names(unclass(p)) #shows list of date and time components of POSIXlt class
+* p <- as.POSIXct(Sys.time()); unclass(p) #brings back big integer for time
+* p <- as.POSIXlt(Sys.time()); p$sec # returns seconds component
+* can only get components from list (lt), so would have to cast from ct class if wanted to
+* strptime() #can convert dates to same format
+* ?strptime #to find the formats
+* e.g.
+* datestring <- c("August 21, 1983 10:58","December 25, 2015 12:00")
+* x <-strptime(datestring, "%B %d, %Y %H:%M")
+*  x #will see both formats same and something diff from above, they are in lt format
+* Once in date or time classes can add, subtract or compare
+* but cannot always mix classes so becareful
+* date and time classes take care of leap years and time zones
+* x <- Sys.Date(); y <- as.Date("1983-08-21"); x-y
+* Plotting functions in R recognise date or time classes and format x axis in special way
+
+#Quiz
+* Parent frame in R is where funcion called
+* Can get from ?parent.frame
+* R environment is a collection of symbol/paris
+* R uses lexical scoping
+* Free variables in R are searched for in environment in which function defined
+* Because of scoping rules in R all objects must be stored in memory
+* 
 
 
 
