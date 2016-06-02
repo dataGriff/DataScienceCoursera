@@ -176,7 +176,14 @@ myplot <- function(x,y,type="l",...){
 * x <- Sys.Date(); y <- as.Date("1983-08-21"); x-y
 * Plotting functions in R recognise date or time classes and format x axis in special way
 
-
+#Quiz
+* Parent frame in R is where funcion called
+* Can get from ?parent.frame
+* R environment is a collection of symbol/paris
+* R uses lexical scoping
+* Free variables in R are searched for in environment in which function defined
+* Because of scoping rules in R all objects must be stored in memory
+* 
 
 
 
