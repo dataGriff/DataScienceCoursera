@@ -6,3 +6,4 @@
 * http://www.jhsph.edu/departments/biostatistics/
 * https://www.r-project.org/doc/bib/R-books.html
 * https://www.bioconductor.org/
+* http://www.statmethods.net/
