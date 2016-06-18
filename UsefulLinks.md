@@ -7,3 +7,5 @@
 * https://www.r-project.org/doc/bib/R-books.html
 * https://www.bioconductor.org/
 * http://www.statmethods.net/
+* https://www.medicare.gov/hospitalcompare/search.html?
+* 
