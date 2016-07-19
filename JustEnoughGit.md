@@ -1,6 +1,6 @@
 ##Just Enough GIT
 
-1. git int
+1. git init
 1. git add .
 1. git commit -m "My Message"
 1. git remote add origin "http://github.com/foo"
